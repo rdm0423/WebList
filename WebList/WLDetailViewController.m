@@ -7,12 +7,13 @@
 //
 
 #import "WLDetailViewController.h"
+#import <WebKit/WebKit.h>
 
 @interface WLDetailViewController ()
 
 - (void)configureView;
 
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) WKWebView *webView;
 
 @end
 
@@ -40,7 +41,9 @@
         
         NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
         
-        [self.webView loadRequest:urlRequest];
+        if (self.webView) {
+            [self.webView loadRequest:urlRequest];
+        }
     }
 }
 
@@ -48,6 +51,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.webView = [[WKWebView alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:self.webView];
+    
     [self configureView];
 }
 
