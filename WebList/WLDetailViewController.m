@@ -7,9 +7,12 @@
 //
 
 #import "WLDetailViewController.h"
+#import <WebKit/WebKit.h>
 
 @interface WLDetailViewController ()
-- (void)configureView;
+
+@property (nonatomic, strong) WKWebView *webView;
+
 @end
 
 @implementation WLDetailViewController
@@ -31,7 +34,12 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
+        NSURL *url = [NSURL URLWithString:[self.detailItem description]];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
         
+        if (self.webView) {
+            [self.webView loadRequest:request];
+        }
     }
 }
 
@@ -39,6 +47,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.webView = [[WKWebView alloc] initWithFrame:self.view.frame];
+    
+    [self.view addSubview:self.webView];
     [self configureView];
 }
 

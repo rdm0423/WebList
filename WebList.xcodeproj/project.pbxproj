@@ -392,6 +392,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WebList/WebList-Prefix.pch";
 				INFOPLIST_FILE = "WebList/WebList-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -405,6 +406,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WebList/WebList-Prefix.pch";
 				INFOPLIST_FILE = "WebList/WebList-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -469,6 +471,7 @@
 				71A5A86D19632D3D00B40A5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		71A5A86E19632D3D00B40A5C /* Build configuration list for PBXNativeTarget "WebListTests" */ = {
 			isa = XCConfigurationList;
@@ -477,6 +480,7 @@
 				71A5A87019632D3D00B40A5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
